@@ -28,8 +28,14 @@ function Dashboard(){
                 <div className="Exp">
                     <Experiences/>
                 </div>
+                <div className="lkg">
+                    <a href="/fav">see all</a>
+                </div>
                 <div className="Hote">
                 <Hotels/>
+                </div>
+                <div className="ukg">
+                    <a href="/pro">see all</a>
                 </div>
             </div>
             </div>

@@ -1,14 +1,19 @@
-import React from 'react'
-
-function Hotels () {
-    const style1={width:45,height:25,color:'white'}
-    const style2={width:25,height:15,color:'white'}
-    
-    return (
+import React from 'react';
+import HCard from './hcard';
+import { hData } from './hData';
+function Hotels(){
+    return(
         <div>
-            <h2> Top Hotels </h2>
+             <h3> Top Hotels</h3>
+            <div className="box-hotel">
+            {hData.map((e)=>{
+            return(
+                <HCard img={e.img} name={e.name} desc={e.desc} rating={e.rating}/>
+            );
+        }
+        )}
+            </div>
         </div>
     )
 }
-
 export default Hotels;

@@ -26,6 +26,7 @@ class Login extends Component{
         this.props.history.push(path);
       }
     handleSubmit = event => {
+        alert('Login Successful');
         event.preventDefault();
     }
     handleChange = event => {
@@ -43,6 +44,9 @@ class Login extends Component{
         {
             if(value===""){
                 errMsg="Field required";
+            }
+            else if((value= /^[a-zA-Z0-9]+@([a-zA-Z0-9]+\.+[A-Za-z]+$)/)){
+                errMsg="enter correct value";
             }
             else
             errMsg="";
@@ -73,18 +77,18 @@ class Login extends Component{
                     <h2> ACCOUNT LOGIN</h2>
                  <div className="form-group">   
                 <label htmlFor='username'>USERNAME</label>
-                <input type="text" name="username" onChange={this.handleChange}/>
+                <input type="text" name="username" placeholder="Enter your Username" onChange={this.handleChange}/>
                 <span className='text-danger'>{usernameError}</span>
                 </div>
                 <div className="form-group">
                 <label htmlFor='password'>PASSWORD</label>
-                <input type="password" name="password" onChange={this.handleChange}/><br/>
+                <input type="password" name="password" placeholder="Enter your password" onChange={this.handleChange}/><br/>
                 <span className='text-danger'>{passwordError}</span><br/>
                 </div>
                 
                 
                
-                <button disabled={!this.state.formValid.buttonActive} className="button" onClick={this.routeChange}>Login</button>
+                <button disabled={!this.state.formValid.buttonActive} type="submit" onClick={this.routeChange}>Login</button>
                 
                 </div>
                 </form>
